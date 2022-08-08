@@ -184,3 +184,61 @@ def sum_myself():
     num4 = int(user_num * 4)
     result = num + num2 + num3 + num4
     print(result)
+
+
+# Question 16:
+# Use a list comprehension to square each odd number in a list. The list is input by a sequence of comma-separated numbers.
+def only_odds():
+    print("Give me a list of numbers separated by commas:")
+    sequence = input()
+    odds = [x for x in sequence.split(',') if int(x) % 2 != 0]
+    print(",".join(odds))
+
+
+# Question 17:
+# Write a program that computes the net amount of a bank account based a transaction log from console input. 
+# The transaction log format is shown as following (D being deposit and W, withdrawal):
+# D 100
+# W 200
+# In the above case, the output should be: -100
+def bank_account():
+    print("Input the amount, preceded of 'D' for deposits and 'W' for withdrawals:")
+    ops = input()
+    netAmount = 0
+    while True:
+        ops = input()
+        if not ops:
+            break
+        else:
+            values = ops.split(" ")
+            operation = values[0]
+            amount = int(values[1])
+            if operation == "D":
+                netAmount += amount
+            elif operation == "W":
+                netAmount -= amount
+            else:
+                pass
+    print(f"The amount in your account is: {netAmount}")
+
+
+# Question 18:
+# Write a program to check the validity of password input by users.
+# Following are the criteria for checking the password:
+# 1. At least 1 letter between [a-z]
+# 2. At least 1 number between [0-9]
+# 1. At least 1 letter between [A-Z]
+# 3. At least 1 character from [$#@]
+# 4. Minimum length of transaction password: 6
+# 5. Maximum length of transaction password: 12
+# Your program should accept a sequence of comma separated passwords and will check them according to the above criteria. 
+# Passwords that match the criteria are to be printed, each separated by a comma.
+import re
+
+def valid_password():
+    print("Write a few passwords separated by comms and I'll check if they're valid:")
+    passwords = input().split(",")
+    result = [password for password in passwords if re.search("[a-z]", password) and re.search("[0-9]", password)\
+            and re.search("[A-Z]", password) and re.search("[$#@]", password) and not re.search("[\s]", password)]
+    print("\nValid passwords:")
+    print(','.join(result))

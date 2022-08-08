@@ -76,3 +76,26 @@
 # Write a program that computes the value of a+aa+aaa+aaaa with a given digit as the value of a.
 
 
+# Question 16:
+# Use a list comprehension to square each odd number in a list. The list is input by a sequence of comma-separated numbers.
+
+
+# Question 17:
+# Write a program that computes the net amount of a bank account based a transaction log from console input. 
+# The transaction log format is shown as following (D being deposit and W, withdrawal):
+# D 100
+# W 200
+# In the above case, the output should be: -100
+
+
+# Question 18:
+# Write a program to check the validity of password input by users.
+# Following are the criteria for checking the password:
+# 1. At least 1 letter between [a-z]
+# 2. At least 1 number between [0-9]
+# 1. At least 1 letter between [A-Z]
+# 3. At least 1 character from [$#@]
+# 4. Minimum length of transaction password: 6
+# 5. Maximum length of transaction password: 12
+# Your program should accept a sequence of comma separated passwords and will check them according to the above criteria. 
+# Passwords that match the criteria are to be printed, each separated by a comma.
